@@ -18,6 +18,12 @@ public class ReflectorMethod {
 		}
 	}
 
+	/**
+	 * Create a class from methods by name and parameters
+	 * @param clazz
+	 * @param name
+	 * @param parameterTypes
+	 */
 	protected ReflectorMethod(final Class<?> clazz, final String name, Class<?>... parameterTypes) {
 		try {
 			this.method = clazz.getDeclaredMethod(name, parameterTypes);
