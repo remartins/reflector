@@ -4,10 +4,22 @@ import java.lang.reflect.Method;
 
 import br.com.reflector.api.exception.ReflectorException;
 
+/**
+ * Class method
+ *  
+ * @author renato
+ *
+ */
 public class ReflectorMethod {
 
 	private Method method;
 
+	/**
+	 * Create a class from methods by name
+	 * @param clazz
+	 * @param name
+	 * @param parameterTypes
+	 */
 	protected ReflectorMethod(final Class<?> clazz, final String name) {
 		try {
 			this.method = clazz.getDeclaredMethod(name);
