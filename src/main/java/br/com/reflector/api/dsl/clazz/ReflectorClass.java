@@ -3,6 +3,7 @@ package br.com.reflector.api.dsl.clazz;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.reflector.api.core.Config;
 import br.com.reflector.api.util.ReflectorUtil;
 
 /**
@@ -12,12 +13,14 @@ import br.com.reflector.api.util.ReflectorUtil;
  */
 public class ReflectorClass {
 
+	private Config config;
 	private Class<?> clazz;
 	private List<ReflectorMethod> methods;
 
 	public ReflectorClass(Class<?> clazz) {
 		this.clazz = clazz;
 		this.methods = new ArrayList<ReflectorMethod>();
+		this.config = Config.getInstance();
 	}
 
 	public ReflectorMethod method(String name) {
@@ -29,6 +32,7 @@ public class ReflectorClass {
 	 * @return List<ReflectorMethod>
 	 */
 	public List<ReflectorMethod> methods() {
+		System.out.println("call methods");
 		this.addMethods(clazz);
 		return getMethods();
 	}
@@ -60,8 +64,9 @@ public class ReflectorClass {
 	}
 
 	private void addMethod(ReflectorMethod m) {
-		this.getMethods().add(m);
-
+		if (!config.getIgnoreMethod().contains(m.getName())) {
+			this.getMethods().add(m);
+		}
 	}
 
 	private List<ReflectorMethod> getMethods() {
