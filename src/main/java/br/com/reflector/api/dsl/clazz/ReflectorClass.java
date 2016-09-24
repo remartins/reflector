@@ -6,8 +6,8 @@ import java.util.List;
 import br.com.reflector.api.util.ReflectorUtil;
 
 /**
- * 
  * @author Renato Martins
+ * 
  *
  */
 public class ReflectorClass {
@@ -24,11 +24,19 @@ public class ReflectorClass {
 		return new ReflectorMethod(clazz, name);
 	}
 
+	/**
+	 * Get methods from class
+	 * @return List<ReflectorMethod>
+	 */
 	public List<ReflectorMethod> methods() {
 		this.addMethods(clazz);
 		return getMethods();
 	}
 
+	/**
+	 * Get methods form class and superclass, except Object
+	 * @return List<ReflectorMethod>
+	 */
 	public List<ReflectorMethod> methodsAll() {
 		this.addMethodsAll(clazz);
 		return getMethods();
