@@ -46,6 +46,10 @@ public class ReflectorMethod {
 		}
 	}
 
+	/**
+	 * Return name from method
+	 * @return
+	 */
 	public String getName() {
 		return this.method.getName();
 	}
