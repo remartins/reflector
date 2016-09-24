@@ -4,7 +4,7 @@ jdk:
   - oraclejdk8
 
 script: 
-  - mvn test
+  - mvn package
   - mvn cobertura:cobertura
 
 after_success:
