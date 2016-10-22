@@ -24,8 +24,8 @@ public class Config {
 	}
 	
 	public void restoreDefault() {
-		this.ignoreClass.clear();;
-		this.ignoreMethod.clear();;
+		this.ignoreClass.clear();
+		this.ignoreMethod.clear();
 
 		addDefaultIgnoreClass();
 		addDefaultIgnoreMethods();
