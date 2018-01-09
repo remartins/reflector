@@ -8,7 +8,7 @@ addons:
   sonarcloud:
     organization: "remartins-github" # the key of the org you chose at step #3
     token:
-      secure: ${SONAR_TOKEN2}
+      secure: ${SONAR_TOKEN}
     
 
 script: 
