@@ -19,8 +19,8 @@ public class ReflectorObject {
 	public ReflectorObject(Object obj) {
 		this.obj = obj;
 		this.config = Config.getInstance();
-		this.methodsClass = new ArrayList<ReflectorMethod>();
-		this.methodsClassAndSuperClass = new ArrayList<ReflectorMethod>();
+		this.methodsClass = new ArrayList<>();
+		this.methodsClassAndSuperClass = new ArrayList<>();
 	}
 
 	/**

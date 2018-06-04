@@ -19,7 +19,7 @@ public class ReflectorClass {
 
 	public ReflectorClass(Class<?> clazz) {
 		this.clazz = clazz;
-		this.methods = new ArrayList<ReflectorMethod>();
+		this.methods = new ArrayList<>();
 		this.config = Config.getInstance();
 	}
 
@@ -32,7 +32,6 @@ public class ReflectorClass {
 	 * @return List<ReflectorMethod>
 	 */
 	public List<ReflectorMethod> methods() {
-		System.out.println("call methods");
 		this.addMethods(clazz);
 		return getMethods();
 	}

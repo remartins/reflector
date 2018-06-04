@@ -2,6 +2,7 @@ package br.com.reflector.api.dsl.clazz;
 
 import java.lang.reflect.Method;
 
+import br.com.reflector.api.core.Const;
 import br.com.reflector.api.exception.ReflectorException;
 
 /**
@@ -23,10 +24,8 @@ public class ReflectorMethod {
 	protected ReflectorMethod(final Class<?> clazz, final String name) {
 		try {
 			this.method = clazz.getDeclaredMethod(name);
-		} catch (NoSuchMethodException e) {
-			throw new ReflectorException("No such method " + name, e.getCause());
-		} catch (SecurityException e) {
-			throw new ReflectorException("Could not invoke method " + name, e.getCause());
+		} catch (NoSuchMethodException | SecurityException e) {
+			throw new ReflectorException("No such method " + name, e);
 		}
 	}
 
@@ -39,10 +38,8 @@ public class ReflectorMethod {
 	protected ReflectorMethod(final Class<?> clazz, final String name, Class<?>... parameterTypes) {
 		try {
 			this.method = clazz.getDeclaredMethod(name, parameterTypes);
-		} catch (NoSuchMethodException e) {
-			throw new ReflectorException("Could not invoke method " + name, e.getCause());
-		} catch (SecurityException e) {
-			throw new ReflectorException("Could not invoke method " + name, e.getCause());
+		} catch (NoSuchMethodException | SecurityException e) {
+			throw new ReflectorException(Const.MSG_ERROR_COULD_NOT_INVOKE_METHOD + name, e);
 		}
 	}
 
