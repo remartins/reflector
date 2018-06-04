@@ -3,6 +3,7 @@ package br.com.reflector.api.dsl;
 
 import br.com.reflector.api.core.Config;
 import br.com.reflector.api.dsl.clazz.ReflectorClass;
+import br.com.reflector.api.dsl.object.ReflectorObject;
 
 public class Reflector {
 	
@@ -18,8 +19,8 @@ public class Reflector {
 		return new ReflectorClass(clazz);
 	}
 	
-//	public static Object on(Object obj) {
-//		return null;
-//	}
+	public static ReflectorObject on(Object obj) {
+		return new ReflectorObject(obj);
+	}
 
 }

@@ -1,8 +1,9 @@
-package br.com.reflector.api.dsl;
+package br.com.reflector.api.dsl.clazz;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+import br.com.reflector.api.dsl.Reflector;
 import br.com.reflector.api.exception.ReflectorException;
 import br.com.reflector.api.mocks.General;
 
@@ -17,6 +18,8 @@ public class ReflectorTest {
 	public void testMethodNotSuch() {
 		Reflector.on(General.class).method("notExists");
 	}
+	
+	
 	
 //	@Test (expected = ReflectorException.class)
 //	public void testMethodNotExists() {

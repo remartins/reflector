@@ -10,4 +10,8 @@ public class General {
 		return value * value;
 	}
 	
+	public void printValue(String value) {
+		System.out.println(value);
+	}
+	
 }
